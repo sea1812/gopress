@@ -9,7 +9,7 @@ writeTimeout        = "0"                           # 数据返回写入超时�
 idleTimeout         = "60s"                         # 仅当Keep-Alive开启时有效，请求闲置时间。默认为60秒
 maxHeaderBytes      = "10240"                       # 请求Header大小限制（Byte）。默认为10KB
 keepAlive           = true                          # 是否开启Keep-Alive功能。默认true
-serverAgent         = "GGPAN Server 2"           # 服务端Agent信息。默认为"GF HTTP Server"
+serverAgent         = "GoGoPress Server 1"           # 服务端Agent信息。默认为"GF HTTP Server"
 
 # 静态服务配置
 indexFiles          = ["index.html","index.htm"]                    # 自动首页静态文件检索。默认为["index.html", "index.htm"]
