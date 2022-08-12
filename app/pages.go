@@ -7,7 +7,7 @@ import (
 
 func PageIndex(r *ghttp.Request) {
 	_ = r.Response.WriteTpl("fbase.html", g.Map{
-		//"app":           G_App_Setting,
+		"app":        G_App_Setting,
 		"contentTpl": "front_index.html",
 		"bottomJs":   "front_index_js.html",
 		"activeband": "dashboard",
