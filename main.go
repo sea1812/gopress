@@ -1,6 +1,9 @@
 package main
 
-import "github.com/gogf/gf/frame/g"
+import (
+	"github.com/gogf/gf/frame/g"
+	"gogopress/app"
+)
 
 func main() {
 	s := g.Server()
