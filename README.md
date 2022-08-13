@@ -4,7 +4,7 @@
 #### 框架
 使用goFrame，非凡的作品。
 #### 数据库
-支持多种数据库，默认使用的是Postgres，参数见config.toml文件
+支持多种数据库，默认使用的是Postgres，参数见config.toml文件和db.sql文件。
 #### 目录
 static：保存静态文件。
 template：保存所有前端模版文件。
