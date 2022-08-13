@@ -12,6 +12,11 @@ func LoadNavLinks() g.List {
 	return res.List()
 }
 
+func LoadPage(pageid int) g.Map {
+	res, _ := g.DB().GetOne("select * from pages where id=?", pageid)
+	return res.Map()
+}
+
 func LoadPostsWithTag(page int, tagid int) g.List {
 	mLines, _ := strconv.Atoi(fmt.Sprint(G_App_Setting["linesperpage"]))
 	mFrom := (page - 1) * mLines
@@ -35,6 +40,21 @@ func LoadPostsWithTag(page int, tagid int) g.List {
 	return mList
 }
 
+func LoadPost(postid int) g.Map {
+	res, _ := g.DB().GetOne("select * from posts where id=?", postid)
+	m := g.Map{
+		"id":        res["id"],
+		"title":     res["title"],
+		"pubdate":   res["pubdate"],
+		"titleimg":  res["titleimg"],
+		"shortdesc": res["shortdesc"],
+		"ctype":     res["ctype"],
+		"content":   res["content"],
+		"tags":      ProcessPostTags(fmt.Sprint(res["tags"])),
+	}
+	return m
+}
+
 func LoadPosts(page int) g.List {
 	mLines, _ := strconv.Atoi(fmt.Sprint(G_App_Setting["linesperpage"]))
 	mFrom := (page - 1) * mLines
@@ -54,7 +74,7 @@ func LoadPosts(page int) g.List {
 		}
 		mList = append(mList, m)
 	}
-	fmt.Println(mList)
+	//fmt.Println(mList)
 	return mList
 }
 

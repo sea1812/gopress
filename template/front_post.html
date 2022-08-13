@@ -1,0 +1,40 @@
+<!--section class="cta-section theme-bg-light py-5">
+    <div class="container text-center single-col-max-width">
+
+        <h2 class="heading">{{.app.subtitle}}</h2>
+        <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
+    </div>
+</section-->
+
+<section class="blog-list px-3 py-5 p-md-5">
+    <div class="container single-col-max-width">
+        <header class="blog-post-header">
+            <h2 class="title mb-2">{{.post.title}}</h2>
+            <div class="meta mb-3">
+                <span class="date">{{.post.pubdate}}</span>
+                {{range $k2,$v2 := $.post.tags}}
+                    <span class="date"><a href="/tag?id={{$v2.id}}">{{$v2.caption}}</a></span>
+                {{end}}
+
+            </div>
+        </header>
+        <hr>
+        {{if eq .post.ctype "Markdown"}}
+            <div class="blog-post-body" id="content">{{.post.content}}</div>
+        {{end}}
+        {{if eq .post.ctype "Html"}}
+            <div class="blog-post-body" id="content">{{.post.content}}</div>
+        {{end}}
+    </div>
+</section>
+{{if eq .post.ctype "Markdown"}}
+
+    <script src="/static/assets/js/marked.min.js"></script>
+    <script src="/static/assets/js/jquery-3.1.1.min.js"></script>
+    <script>
+        var m = ($("#content").text());
+        console.log(marked.parse(m));
+        $("#content").html(marked.parse(m));
+
+    </script>
+{{end}}

@@ -58,7 +58,7 @@ Delimiters  =  ["{{", "}}"]
 
 # 数据库配置
 [database]
-link = "pgsql:user=postgres password=doo9900990 host=ggyun.top port=5432 dbname=blog sslmode=disable"
+link = "pgsql:user= password= host= port= dbname=blog sslmode=disable"
 
 #Markdown所在目录
 [markdown]
