@@ -16,9 +16,10 @@ func main() {
 	s.AddStaticPath("/static", "./static")
 
 	GroupRoot := s.Group("/")
-	GroupRoot.GET("/", app.PageIndex)         //前台首页和内容列表
-	GroupRoot.GET("/about", app.PageIndex)    //关于
-	GroupRoot.GET("/category", app.PageIndex) //内容分类导航
+	GroupRoot.GET("/", app.PageIndex)          //前台首页和内容列表
+	GroupRoot.GET("/about", app.PageIndex)     //关于
+	GroupRoot.GET("/tag", app.PageTag)         //按标签检索显示内容列表
+	GroupRoot.GET("/article", app.PageArticle) //显示具体文章内容
 
 	GroupAdmin := s.Group("/admin")
 	GroupAdmin.ALL("/", app.PageIndex)                   //后台首页和登录页

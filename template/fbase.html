@@ -35,22 +35,27 @@
                 <img class="profile-image mb-3 rounded-circle mx-auto" src="{{.app.logoimg}}"
                      alt="image">
 
-                <div class="bio mb-3">{{.app.intro}}<br><a href="/about">关于我和本站的信息</a></div><!--//bio-->
+                <!--div class="bio mb-3"><small>{{.app.intro}}</small></div--><!--//bio-->
+                <!--
                 <ul class="social-list list-inline py-3 mx-auto">
                     <li class="list-inline-item"><a href="https://github.com/sea1812" target="_blank"><i
                                     class="fab fa-github-alt fa-fw"></i></a></li>
-                </ul><!--//social-list-->
+                </ul>--><!--//social-list-->
                 <hr>
             </div><!--//profile-section-->
 
             <ul class="navbar-nav flex-column text-start">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/"><i class="fas fa-home fa-fw me-2"></i>首页 <span
+                    <a class="nav-link --active" href="/"><i class="fas fa-home fa-fw me-2"></i>首页 <span
                                 class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="blog-post.html"><i class="fas fa-bookmark fa-fw me-2"></i>分类 </a>
-                </li>
+                {{range $k , $v := .navlinks}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{$v.url}}"><i class="fas fa-bookmark fa-fw me-2"></i>{{$v.caption}}
+                        </a>
+                    </li>
+                {{end}}
+
                 <li class="nav-item">
                     <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw me-2"></i>关于 </a>
                 </li>
@@ -69,6 +74,7 @@
         <small class="copyright"><a target="_blank"
                                     href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{.app.gongan}}">{{.app.gongan_title}}{{.app.gongan}}
                 号</a></small><br>
+        <small class="copyright">{{.app.lastfooter}}</small>
         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
         <!--small class="copyright">模版由<span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i>Xiaoying Riley设计，来自themes.3rdwavemedia.com</small-->
     </footer>
