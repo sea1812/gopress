@@ -13,4 +13,4 @@ static：保存静态文件。
 template：保存所有前端模版文件。
 
 ## 管理软件
-![](https://www.ggyun.top/static/screen/macpressadmin.png)
+![](http://www.ggyun.top/static/screen/ggpressadmin.png)
